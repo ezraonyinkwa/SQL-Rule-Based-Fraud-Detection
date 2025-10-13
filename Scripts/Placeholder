@@ -1,1 +1,4 @@
-      
+For the fraud detection rules we are going to work on the following
+### 1.) High Transaction Amount (Threshold Breach)
+
+Purpose: Flag transactions above the normal spending threshold
