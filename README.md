@@ -1,2 +1,20 @@
 # SQL-Rule-Based-Fraud-Detection
-This projects highlights the use of SQL in creating Fraud Detection Rules from transactional data
+This project demonstrates how SQL can be used to detect and score fraudulent transactions from daily banking data. It involves building a Star Schema data model, cleaning and structuring raw transaction data, and applying rule-based fraud detection logic to identify unusual or suspicious activities.
+
+## Key Features
+
+- Designed a Star Schema with dimension and fact tables for efficient data modeling.
+
+- Implemented SQL-based fraud detection rules, including high-value transactions, device sharing, location anomalies, and transaction velocity.
+
+- Created a Fraud Risk Scoring System (0–100) to rank transactions based on severity.
+
+- Ensured data integrity and traceability across all relational tables.
+
+## Tech Stack
+
+- SQL (Data Cleaning, Modelling, Rule Implementation)
+
+- Relational Database Design (Star Schema)
+
+- Data Validation & Fraud Analytics
