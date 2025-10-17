@@ -101,3 +101,11 @@ SELECT TransactionID,AccountID,MerchantID,DeviceID,TransactionAmount, CustomerAg
 TransactionDuration ,LoginAttempts,AccountBalance,TransactionsDate ,TransactionsTime,CurrentTransactionDate,CurrentTransactionTime
 FROM transactions_data;
 
+ALTER TABLE FactTransactionsData
+ADD TransactionType VARCHAR (50); ---added a column that was important for developing the system and it was missing in the fact table.
+
+UPDATE f
+SET f.TransactionType = t.TransactionType
+FROM FactTransactionsData f
+INNER JOIN transactions_data t
+    ON f.TransactionID = t.TransactionID;
