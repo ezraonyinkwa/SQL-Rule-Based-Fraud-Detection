@@ -58,5 +58,29 @@ SELECT
     COUNT(DISTINCT DeviceID) AS DistinctDevices,
     DATEPART(HOUR, CurrentTransactionTime) AS HourWindow
 FROM FactTransactionsData
+
+--- Same IP Used by Multiple Merchants
+SELECT 
+    d.IP_Address,
+    COUNT(DISTINCT f.MerchantID) AS MerchantsUsingIP
+FROM FactTransactionsData f
+JOIN DimDevice d ON f.DeviceID = d.DeviceID
+GROUP BY d.IP_Address
+HAVING COUNT(DISTINCT f.MerchantID) > 2; --- 338 Cases found of multiple merchants using the same IP_Address.
+
+--- Inconsistent Transaction Type Behavior
+SELECT 
+    AccountID,
+    COUNT(DISTINCT TransactionType) AS TxnTypes
+FROM FactTransactionsData
+GROUP BY AccountID
+HAVING COUNT(DISTINCT TransactionType) >= 2; 
+
+---Odd Transaction Time (Night Hours)
+SELECT 
+    TransactionID, AccountID, CurrentTransactionTime, TransactionAmount
+FROM FactTransactionsData
+WHERE DATEPART(HOUR, CurrentTransactionTime) BETWEEN 0 AND 4; --- No transactions made in odd hours.
+
 GROUP BY AccountID, DATEPART(HOUR, CurrentTransactionTime)
 HAVING COUNT(DISTINCT DeviceID) > 3; 
