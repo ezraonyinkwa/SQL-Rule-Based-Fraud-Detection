@@ -7,8 +7,6 @@ This project demonstrates how SQL can be used to detect and score fraudulent tra
 
 - Implemented SQL-based fraud detection rules, including high-value transactions, device sharing, location anomalies, and transaction velocity.
 
-- Created a Fraud Risk Scoring System (0–100) to rank transactions based on severity.
-
 - Ensured data integrity and traceability across all relational tables.
 
 ## Tech Stack
