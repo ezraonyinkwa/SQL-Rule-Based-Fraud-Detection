@@ -29,7 +29,7 @@ distinct fraud pattern:
 
 | Rule | What It Detects | Findings |
 |------|----------------|----------|
-| High-Value Threshold | Transactions above $5,000 | Flagged for review |
+| High-Value Threshold | Transactions above 5,000 | Flagged for review |
 | Transaction Velocity | 5+ transactions within 10 minutes | 0 cases — pattern shifted |
 | Device Sharing | 1 device used by 3+ accounts | **344 cases found** |
 | Unusual Location | Accounts with only 1 transaction location | **24 cases found** |
